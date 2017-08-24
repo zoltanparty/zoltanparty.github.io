@@ -1,0 +1,38 @@
+<div class="content" id="candy-page">
+  <audio src="audio/CandyShop.mp3" autoplay>
+  </audio>
+
+<div id="candy-col-1">
+  <img src="../assets/images/toad.png">
+</div>
+
+<div id="candy-col-2">
+  <button ng-click="candy.pickThree()" id="choose-candy"><span id="button-text">"Choose a candy!"</span></button>
+</div>
+
+<div id="candy-col-3">
+
+    <table class="candies">
+      <tr ng-if="candy.stockOne.color">
+        <td class="candy-color" id="{{candy.stockOne.color}}"><img src="../assets/images/candy.png" /></td>
+        <td id="candy-descrip">{{candy.stockOne.description}}</td>
+        <td id="candy-cost">{{candy.stockOne.price}}<img src="../assets/images/coin.png" /></td>
+      </tr>
+      <tr ng-if="candy.stockTwo.color">
+        <td class="candy-color" id="{{candy.stockTwo.color}}"><img src="../assets/images/candy.png" /></td>
+        <td id="candy-descrip">{{candy.stockTwo.description}}</td>
+        <td id="candy-cost">{{candy.stockThree.price}}<img src="../assets/images/coin.png" /></td>
+      </tr>
+      <tr ng-if="candy.stockThree.color">
+        <td class="candy-color" id="{{candy.stockThree.color}}"><img src="../assets/images/candy.png" /></td>
+        <td id="candy-descrip">{{candy.stockThree.description}}</td>
+        <td id="candy-cost">{{candy.stockThree.price}}<img src="../assets/images/coin.png" /></td>
+      </tr>
+
+    </table>
+
+
+  </div>
+
+
+</div>

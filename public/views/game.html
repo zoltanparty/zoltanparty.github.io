@@ -1,0 +1,84 @@
+<div class="content" id="game-page-color">
+
+<div class="game-col-1" ng-controller="PlayerController as player">
+
+  <h5>1. Game Type</h5>
+  <button ng-click="game.selectType()">Select type</button>
+ <p id="game-result">{{game.gameType}}</p>
+  <h5>2. Select Game</h5>
+  <button ng-click="game.randFFA()">Free for All</button>
+   <p id="game-result">{{game.ffaSelect.title}}</p>
+  <br />
+  <button ng-click="game.randTwo()">Two vs Two</button>
+   <p id="game-result">{{game.twoSelect.title}}</p>
+
+
+  <h5>3. Select Teams</h5>
+  <button ng-click="player.getTeams()">Pick Teams</button>
+
+<br />
+<div id="team-one" ng-if="player.teamPlayerOne.character">
+
+
+<div class="team-player" id="team-one-player">
+  <img ng-if="player.teamPlayerOne.character" ng-src="{{player.teamPlayerOne.character}}" />
+  <br />{{player.teamPlayerOne.name}}
+</div>
+<div class="team-player" id="team-one-player">
+  <img ng-if="player.teamPlayerTwo.character" ng-src="{{player.teamPlayerTwo.character}}" />
+<br />  {{player.teamPlayerTwo.name}}
+</div>
+</div>
+<div id="vs" ng-if="player.teamPlayerOne.character">
+  <p>VS</p>
+</div>
+<div id="team-two" ng-if="player.teamPlayerOne.character">
+
+<div class="team-player" id="team-two-player">
+  <img ng-if="player.teamPlayerThree.character" ng-src="{{player.teamPlayerThree.character}}" />
+<br />  {{player.teamPlayerThree.name}}
+</div>
+<div class="team-player" id="team-two-player">
+  <img ng-if="player.teamPlayerFour.character" ng-src="{{player.teamPlayerFour.character}}" />
+<br />  {{player.teamPlayerFour.name}}
+</div>
+</div>
+
+
+
+</div> <!-- end col-1 -->
+
+
+
+
+<div class="game-col-2">
+  <div id="game-sub-1"></div>
+  <div id="game-sub-2">
+    <img ng-if="game.twoSelect.cover" ng-src="{{game.twoSelect.cover}}" />
+    <img ng-if="game.ffaSelect.cover" ng-src="{{game.ffaSelect.cover}}" />
+  </div>
+  <div id="game-sub-3"></div>
+
+</div>
+
+<!-- <table>
+  <tr ng-repeat="ffa in game.ffaArray">
+    <td>{{ffa.title}}</td>
+    <td>{{ffa.cover}}</td>
+  </tr>
+</table> -->
+
+
+
+  <!-- <table>
+    <tr ng-repeat="two in game.twoArray">
+      <td>{{two.title}}</td>
+      <td>{{two.cover}}</td>
+    </tr>
+  </table> -->
+
+
+
+
+
+</div>

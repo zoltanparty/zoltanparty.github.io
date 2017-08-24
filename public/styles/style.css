@@ -1,0 +1,1678 @@
+/* ------------------- GENERAL ------------------- */
+@font-face { font-family: 'Mario'; src: url('../assets/fonts/mario.ttf'); }
+@font-face { font-family: 'Balls'; src: url('../assets/fonts/balls.ttf'); }
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+.content {
+  padding-bottom: 500px;
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 100px;
+    min-height: 100%;
+    font-family: "Trebuchet MS";
+    background-color: #42b3f4;
+}
+h1 {
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    margin: 20px auto auto -250px;
+    font-family: 'Mario';
+    padding-top: 200px;
+}
+h2 {
+    text-align: center;
+    font-size: 22px;
+    color: white;
+    font-family: 'Mario';
+}
+h3 {
+    text-align: center;
+    font-size: 26px;
+    font-family: 'Mario';
+}
+h4 {
+    font-size: 26px;
+    text-align: center;
+    background-color: pink;
+}
+h5 {
+  text-align: center;
+  font-family: 'Mario';
+  background-color: lightgrey;
+  margin: 0;
+}
+h6 {
+  font-family: 'Mario';
+  display: inline;
+  text-align: left;
+  padding-left: 20px;
+  color: black;
+}
+p {
+  color: black;
+  text-align: center;
+  font-size: 9px;
+  font-family: 'Mario';
+}
+th {
+  background-color: #d1d3d1;
+}
+ul {
+  float: left;
+}
+a {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+a:hover {
+  opacity: 0.5;
+  letter-spacing: 2px;
+}
+a:focus {
+  letter-spacing: 5px;
+}
+/*th, td {
+    padding: 3px 12px;
+    font-size: 26px;
+}*/
+.div {
+    margin-right: 50px;
+    float: left;
+}
+
+#backbutton {
+  background-image: url('../assets/images/block2.png');
+  background-size: contain;
+  width: 80px;
+  height: 80px;
+  padding: 15px;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+.wide {
+  width: 100%;
+}
+
+/* ------------------- STATIC ------------------- */
+.static {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #efefef;
+  text-align: center;
+  height: 170px;
+  border-top: 5px outset;
+}
+/* ------------------- PAGES ------------------- */
+#pages-box {
+  width: 25%;
+  background: linear-gradient(#73dddc, #4ba8a6);
+  height: 100%;
+  float: left;
+}
+.page-list {
+  list-style-type: none;
+  width: 50%;
+  float: left;
+  margin: auto;
+  padding: 0;
+}
+.page-list li {
+  background-color: white;
+  width: 75%;
+  margin: 5px auto;
+  border: 2px outset;
+  border-radius: 5px;
+  padding: 2px 0;
+  font-family: 'Mario';
+  font-size: 9px;
+}
+
+
+/* ------------------- COUNTER ------------------- */
+#counter-box {
+  width: 75%;
+  background: linear-gradient(#32c188, #5fe8b1);
+  height: 100%;
+  float: left;
+  border-left: 5px outset;
+}
+#counter-box table {
+  /*margin-left: 10px;*/
+  width: 40%;
+}
+#counter-box th {
+  width: 50px;
+}
+.grey-box {
+  background-color: lightgrey;
+}
+#counter-box img {
+  height: 15px;
+}
+#red-th {
+  background-color: #db4646;
+}
+#green-th {
+  background-color: #80db76;
+}
+#counter-box input {
+  width: 100px;
+  font-size: 9px;
+  font-family: 'Mario';
+  text-align: center;
+  border: none;
+}
+.counterbutton {
+    background-color: inherit;
+    color: black;
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+    /*font-family: 'Mario';
+    margin: 0;
+    padding: 0;*/
+    text-align: center;
+    border: none;
+}
+#turn-counter {
+  float: left;
+  /*padding-left: 30px;*/
+  width: 13%;
+
+}
+#currentTurn-count {
+  font-size: 30px;
+}
+#game-turn {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(#FFFFFF, #bababa);
+  border: 3px inset;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+#next-player {
+  width: 100%;
+  height: 40px;
+  border: 3px outset;
+  background: linear-gradient(#582dd8, #2db1e5);
+  color: white;
+  font-family: 'Mario';
+  font-size: 9px;
+}
+#name-fill {
+  min-width: 100px;
+}
+#counter-text {
+  font-family: 'Mario';
+  font-size: 10px;
+}
+#counter input {
+  width: 40px;
+  height: 100%;
+  font-family: Arial;
+  font-size: 12px;
+  text-align: center;
+  padding-left: 10px;
+
+}
+#counter input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+    color: transparent;
+      text-shadow: 0px 0px 0.5px black;
+}
+#game-turn label {
+  text-align: center;
+  font-family: 'Mario';
+  font-size: 8px;
+}
+#game-turn input {
+  font-size: 36px;
+  text-align: center;
+  margin-top: -10px;
+  margin-left: 10px;
+  background: none;
+}
+#game-turn input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+    color: transparent;
+      text-shadow: 0px 0px 0.5px black;
+}
+/* ------------------- SONG  ------------------- */
+.song {
+  height: 50%;
+  width: 100px;
+  float: left;
+}
+#change-song {
+  background-color: white;
+}
+#pause-song {
+  background-color: red;
+}
+
+/* ------------------- CURRENT TURN ------------------- */
+#current-turn {
+  height: 100%;
+  width: 40%;
+  background-color: white;
+  float: right;
+  /*margin: 5px;*/
+}
+#current-turn ul {
+}
+#current-turn img {
+  height: 140px;
+  margin: auto;
+  padding-top: 10px;
+}
+#current-turn p {
+  font-size: 8px;
+  display: inline-block;
+}
+#current-player {
+}
+
+
+/* ------------------- STANDINGS ------------------- */
+#index-standing {
+  width: 100%;
+  float: left;
+  height: 100%;
+  /*background: radial-gradient(#f4f4f4, #55eda3);*/
+}
+#current-turn h5 {
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 7px;
+  /*background: linear-gradient(#e85c71, #efefef);*/
+  background: linear-gradient(#a0a0a0, #c9c9c9, #a0a0a0);
+  color: #846a23;
+}
+#index-standing img {
+  height: 80px;
+}
+#current-turn table {
+  width: 100%;
+  border: none;
+}
+/*#current-turn td {
+  width: 25%;
+}*/
+#index-standing-table {
+  width: 100%;
+}
+#index-standing-table td {
+  border: none;
+  width: 25%;
+}
+#index-standing p {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+#index-standing p img {
+  height: 30px;
+}
+
+#index-standing-table td:nth-child(1) {
+  background: radial-gradient(#fcbf46, #e5c179, #ce982b);
+}
+#index-standing-table td:nth-child(2) {
+  background: radial-gradient(#b7b3ac, #e5e4e3, #848484);
+}
+#index-standing-table td:nth-child(3) {
+  background: radial-gradient(#8c6008, #b28223, #8e6209);
+}
+#index-standing-table td:nth-child(4) {
+  background: radial-gradient(#0c0c0c, #2d2d2d, #302f2e);
+}
+#index-standing-table td:nth-child(4) p {
+  color: white;
+}
+
+#star-left {
+  float: left;
+  width: 50%;
+
+}
+#coin-right {
+  float: right;
+  width: 50%;
+}
+
+
+
+#standings {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  margin-left: 5px;
+}
+
+#standings img {
+  height: 27px;
+}
+/*#standings-char img{
+  height: 50px;
+}*/
+#standings li {
+  border-bottom: 1px solid black;
+}
+#standings-player {
+  font-size: 12px;
+  margin-top: 0;
+}
+#standings-table {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+#current-turn table {
+  margin-left: 0px;
+}
+
+
+
+
+/* ------------------- HOME PAGE ------------------- */
+#home-page {
+  /*height: 2000px;*/
+  background-image: url('../assets/images/warp.jpg');
+  background-size: cover;
+  margin-top: -20px;
+  width: 100%;
+  padding-bottom: 500px;
+}
+#new-game {
+  margin-left: 35%;
+  margin-top: 5%;
+  font-family: 'Mario';
+  width: 300px;
+  height: 100px;
+  border-radius: 15px;
+  border: 5px outset;
+  background: linear-gradient(#582dd8, #2db1e5);
+  font-size: 20px;
+  color: white;
+}
+
+/* ------------------- CONFIRM PAGE ------------------- */
+#confirm-page {
+  height: 1000px;
+  background-image: url('../assets/images/warp.jpg');
+  background-size: cover;
+  padding-top: 5%;
+  /*padding-bottom: 500px;*/
+
+}
+#confirm-page h3 {
+  background: linear-gradient(#bcbcbc, white);
+  margin-top: 0;
+  border-radius: 15px 15px 0 0;
+}
+#confirm-box {
+  margin: 50px auto;
+  width: 600px;
+  height: 400px;
+  background-color: white;
+  border-radius: 15px;
+  border: 5px inset;
+  padding: auto 10px;
+}
+#confirm-buttons {
+  margin: auto;
+  width: 100%;
+}
+.confirm-button {
+  border-radius: 15px;
+  font-family: 'Mario';
+}
+#yes {
+  width: 100px;
+  height: 40px;
+  background: linear-gradient(#53c66e, #309b49);
+  margin-left: 250px;
+  margin-top: 50px;
+}
+#no {
+  width: 400px;
+  height: 80px;
+  background: linear-gradient(#b73a3a, #a02b2b);
+  margin-left: 100px;
+  margin-top: 50px;
+  font-size: 20px;
+  color: white;
+
+}
+
+
+/* ------------------- NEW GAME ------------------- */
+#newgame-page {
+  background: linear-gradient(#103063, #451782);
+}
+#newgame-page form {
+  background: radial-gradient(#FFFFFF, #d8d8d8);
+  height: 60px;
+  padding-top: 20px;
+  min-width: 550px;
+  width: 70%;
+  margin: auto;
+  margin-top: 10px;
+
+  border-radius: 15px 15px 0 0;
+  border-top: 3px outset;
+  border-left: 2px outset;
+  border-right: 2px outset;
+}
+#newgame-page img {
+  height: 50px;
+}
+#newgame-page select {
+  height: 30px;
+
+  margin: auto 10px;
+}
+#char-select {
+  margin: 30px auto;
+  width: 60%;
+  color: white;
+  text-align: center;
+  background: linear-gradient(#27998b, #1b617c);
+  padding: 10px 20px;
+  border: 5px inset;
+  border-radius: 15px;
+  min-width: 800px;
+}
+#startgame {
+  width: 50%;
+  height: 50px;
+  border-radius: 15px;
+  border: 4px outset;
+  margin: 15px;
+  background: radial-gradient(#efefef, #6ed9e5);
+  color: black;
+  font-family: 'Mario';
+  letter-spacing: 5px;
+  font-size: 17px;
+}
+#char-select a {
+  display: block;
+}
+#char-select input {
+  margin: auto 30px;
+  font-family: 'Mario';
+  font-size: 8px;
+  padding-left: 10px;
+}
+#char-forms {
+  width: 80%;
+  border: 4px inset;
+  border-radius: 15px;
+  margin: auto;
+  padding: 15px;
+  background-image: url('../assets/images/texture1.png');
+  min-width: 700px;
+}
+#new-character {
+  float: right;
+  width: 40px;
+  height: 70px;
+  margin-top: -15px;
+  margin-right: 80px;
+}
+#ready {
+  height: 25px;
+  width: 80px;
+  margin-top: -15px;
+  font-family: 'Mario';
+  font-size: 8px;
+  background: linear-gradient(#55e043, #3dba2c);
+  border-radius: 15px;
+  border: 2px outset;
+}
+
+/* ------------------- PLAYERS PAGE --------------------- */
+#players-page {
+  background: radial-gradient(#29cebe, #13d823);
+}
+#all-players {
+  margin-top: 5%;
+
+}
+.player-display {
+  height: 40%;
+  width: 20%;
+  float: left;
+  background: linear-gradient(#103063, #451782);
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  border: 5px inset;
+  border-radius: 15px;
+  box-shadow: 0 25px 10px -10px purple;
+}
+.player-display img:nth-child(1) {
+  height: 300px;
+  margin: auto;
+  padding-top: 10px;
+  padding-left: 25%;
+  padding-right: 5%;
+  /*background: radial-gradient(#FFFFFF, #451782);
+  border-radius: 100%;*/
+}
+
+.player-display p:nth-child(1) {
+  margin-bottom: 50px;
+  font-size: 50px;
+  color: white;
+}
+.player-display p:nth-child(2) {
+  margin-bottom: 50px;
+  font-size: 20px;
+  color: white;
+}
+.player-display p:nth-child(3) {
+  margin-bottom: 50px;
+  font-size: 20px;
+  color: #f2ad37;
+}
+#display-name {
+  font-size: 30px;
+}
+
+#display-small {
+  height: 40px;
+  margin: auto;
+  margin-top: 5%;
+}
+
+
+
+/* ------------------- INDEX PAGE --------------------- */
+#index {
+  background-image: url('https://../assets/images5.alphacoders.com/490/490259.jpg');
+  background-size: cover;
+}
+#game-page {
+  background-color: tomato;
+}
+#rules-page {
+  background-color: pink;
+}
+
+.image-list {
+  list-style-type: none;
+}
+.image-list li {
+  padding: 15px 0;
+
+}
+ #center-section {
+   margin: auto;
+ }
+.center {
+  margin: auto 20%;
+}
+#green {
+    background-color: #80db76;
+    color: black;
+}
+#game {
+    background-color: tomato;
+    color: white;
+}
+#rules {
+    background-color: pink;
+    color: black;
+}
+#candy {
+    background-color: #9188f7;
+    color: white;
+}
+#casino {
+    background-color: #ce5475;
+    color: white;
+}
+#bowser {
+  background-color: #b23030;
+  color: white;
+}
+#players {
+  background-color: #efe52d;
+}
+
+
+
+/* ------------------- STANDINGS PAGE ------------------- */
+#standings-page {
+  background: radial-gradient(#33b277, #0c9b58);
+}
+#standings-page h2 {
+  font-size: 30px;
+}
+#standings-page table {
+  width: 100%;
+  font-family: 'Mario';
+  font-size: 25px;
+
+}
+#standings-page td {
+  background: none;
+  border: none;
+}
+.standings-page-table img {
+  height: 100px;
+}
+#standings-left {
+  width: 50%;
+  float: left;
+}
+#standings-right {
+  width: 50%;
+  float: left;
+}
+#standings-page-char img {
+  height: 250px;
+}
+#standings-left-table tr:nth-child(1) {
+  background: linear-gradient(#fcbf46, #e5c179, #ce982b);
+}
+#standings-left-table tr:nth-child(2) {
+  background: linear-gradient(#b7b3ac, #e5e4e3, #848484);
+}
+#standings-right-table tr:nth-child(1) {
+  background: linear-gradient(#8c6008, #b28223, #8e6209);
+}
+#standings-right-table tr:nth-child(2) {
+  background: linear-gradient(#0c0c0c, #2d2d2d, #302f2e);
+  color: white;
+}
+
+
+
+/* ------------------- COUNTER PAGE ------------------- */
+
+#namesize {
+  font-size: 10px;
+}
+#playersize {
+  font-size: 22px;
+  font-family: 'Mario';
+}
+#labelsize {
+  font-family: 'Mario';
+  font-size: 16px;
+  color: black;
+}
+#counter {
+  float: left;
+}
+#turncounter {
+  font-family: 'Mario';
+}
+
+
+button:focus {
+  display: none;
+}
+
+
+/* ------------------- GREEN PAGE ------------------- */
+#green-page {
+  background: radial-gradient(#86ff6b, #4ca339);
+}
+#roll-green {
+  height: 0px;
+  width: 0px;
+  display: none;
+}
+#green-result {
+  font-family: 'Mario';
+  color: white;
+  font-size: 140px;
+  background-image: url('../assets/images/block2.png');
+  background-size: cover;
+  height: 400px;
+  width: 400px;
+}
+#green-table {
+  margin-left: 36%;
+  margin-top: 10%;
+}
+#green-table th {
+  min-width: 50px;
+  font-family: 'Mario';
+  font-size: 10px;
+}
+#green-table td {
+}
+#green-table table {
+  float: left;
+}
+#green-table button {
+  float: left;
+  margin-left: 50px;
+  box-shadow: 10px 10px 10px black;
+}
+#green-num {
+  font-family: 'Mario';
+  padding-left: -15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+#green-data {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 20px;
+}
+#green-larger {
+  font-size: 40px;
+  margin-right: 5px;
+}
+
+
+/* ------------------- MINI GAME PAGE ------------------- */
+#game-page-color {
+  background: radial-gradient(tomato, #681905);
+}
+#game-page-color button {
+  height: 20px;
+  width: 100px;
+  background: radial-gradient(#e2e2e2, #5cc9ac);
+  font-weight: bold;
+}
+#game-page-color h5 {
+  text-align: center;
+}
+#game-result {
+  color: white;
+  padding: 0;
+  margin: 0;
+  margin-right: 10px;
+  display: inline;
+  font-family: Arial;
+  font-size: 15px;
+}
+.game-col-1 {
+  float: left;
+  width: 30%;
+  background: linear-gradient(#353535, #777777);
+  height: 1000px;
+  border-right: 5px inset;
+}
+.team-player img {
+  margin: auto;
+  width: 50%;
+  margin-left: 20px;
+}
+.team-player {
+  margin-bottom: 30px;
+  text-align: center;
+  border-radius: 30px;
+  color: white;
+  font-family: 'Mario';
+  font-size: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#team-one {
+  float: left;
+  width: 40%;
+}
+#team-two {
+  float: right;
+  width: 40%;
+}
+#vs {
+  width: 20%;
+  float: left;
+  text-align: center;
+}
+#vs p {
+  margin-top: 150px;
+  color: #4bf248;
+  font-size: 20px;
+}
+#team-one-player {
+  border-bottom: 5px solid #3beaf9
+;
+}
+#team-two-player {
+  border-bottom: 5px solid #f24848;
+}
+/*.game-col-1 img {
+  height: 50px;
+  display: inline-block;
+}*/
+.game-col-2 {
+  float: left;
+  width: 70%;
+  height: 100%;
+}
+.game-col-2 img {
+
+}
+#game-sub-1{
+  float: left;
+  width: 30%;
+  height: 1000px;
+}
+#game-sub-2{
+  float: left;
+  width: 40%;
+  height: 1000px;
+}
+#game-sub-2 img {
+  float: left;
+  /*height: 450px;*/
+  width: 100%;
+  border-radius: 15px;
+  border: 5px outset;
+  margin-top: 20px;
+  box-shadow: 10px 10px 10px 10px black;
+}
+#game-sub-3{
+  float: right;
+  width: 30%;
+  height: 1000px;
+}
+
+
+
+
+.game-section img {
+  margin-left: 100px;
+}
+.free {
+  margin: auto;
+}
+.free td {
+  width: 300px;
+}
+.twov {
+  margin: auto;
+}
+.twov td {
+  width: 300px;
+}
+.auto {
+  margin: auto;
+}
+.auto th {
+  width: 300px;
+}
+.game-list {
+    float: left;
+    margin: 0 50px;
+    line-height: 25px;
+}
+.game-button {
+  width: 150px;
+  height: 50px;
+  border: none;
+  background-color: #d1d3d1;
+  font-family: 'Mario';
+}
+.game-section {
+  /*text-align: center;*/
+  /*display: inline-block;*/
+  float: left;
+  margin: 30px auto;
+}
+#select-team {
+  width: 300px;
+}
+.game-header {
+  font-family: 'Mario';
+}
+.game-type {
+  background: none;
+}
+.teams {
+  width: 100%;
+}
+
+
+
+/* ------------------- CANDY PAGE ------------------- */
+#candy-page {
+  background: radial-gradient(#db2e2e, #9188f7);
+}
+#candy-col-1 {
+  width: 35%;
+  float: left;
+}
+#candy-col-1 img {
+  height: 500px;
+  margin: 30% auto auto 40%;
+}
+#candy-col-2 {
+  width: 10%;
+  float: left;
+  margin: 80px auto auto auto;
+}
+#candy-col-2 button {
+  margin-top: 40%;
+  width: 100%;
+}
+#candy-col-3 {
+  width: 55%;
+  float: left;
+  margin-top: 120px;
+  padding-left: 100px;
+}
+#candy-col-3 table {
+  width: 90%;
+}
+.candy-color {
+  padding: 3px 10px;
+}
+.candies img {
+  height: 90px;
+}
+.candies td:nth-child(1){
+  border-radius: 100%;
+  padding: 5%;
+  border: 5px inset;
+}
+.candies td:nth-child(2){
+  font-size: 30px;
+  border-radius: 60px;
+  background: linear-gradient(#ededed, #cccccc);
+}
+.candies td:nth-child(3){
+  font-size: 40px;
+  border-radius: 60px;
+  font-family: 'Mario';
+  min-width: 150px;
+}
+#candy-cost img {
+  float: right;
+}
+
+#candy-descrip {
+  /*width: 300px;*/
+}
+#candy-cost {
+  padding: 3px 10px;
+}
+#choose-candy {
+  background-color: white;
+  padding: 5% 5%;
+  border-radius: 15px 15px 15px 0;
+}
+.candy-head th {
+  width: 500px;
+}
+#roll {
+    background-color: white;
+    color: black;
+    height: 60px;
+    width: 150px;
+    border-radius: 20px;
+}
+#candy-list {
+    float: left;
+    margin: 0 50px;
+    line-height: 25px;
+}
+#roll-result {
+    font-color: white;
+    font-size: 50px;
+    display: inline;
+}
+#candy-table, th, td {
+    border: outset;
+    background-color: white;
+    text-align: center;
+}
+#candy-table {
+    float: left;
+}
+#red-candy {
+    background-color: #db4646;
+    padding: 2px 20px;
+}
+#yellow-candy {
+    background-color: #f9ee4f;
+    padding: 2px 20px;
+}
+#green-candy {
+    background-color: #4dd62f;
+    padding: 2px 20px;
+}
+#white-candy {
+    background-color: white;
+    padding: 2px 20px;
+}
+#black-candy {
+    background-color: #232323;
+    padding: 2px 20px;
+    color: white;
+}
+#blue-candy {
+    background-color: #3e66dd;
+    padding: 2px 20px;
+    color: white;
+}
+#candy-results {
+  margin: 0;
+  font-size: 70px;
+}
+#yellow {
+  background-color: yellow;
+}
+
+
+
+
+/* ------------------- RULES PAGE ------------------- */
+#rules-page-color {
+  background: linear-gradient(pink, #a3739f);
+}
+.rules {
+    margin: auto;
+    float: right;
+    width: 80%;
+    font-size: 20px;
+}
+.rule-col-1 {
+  float: left;
+  width: 40%;
+  padding: 30px;
+}
+.rule-col-2 {
+  float: left;
+  width: 60%;
+}
+#rule-subcol-1 {
+  float: left;
+  width: 30%;
+}
+#rule-subcol-2 {
+  float: left;
+  width: 60%;
+}
+#ruleDescrip {
+    width: 80%;
+    margin-left: 10%;
+    border: 2px inset;
+    padding: 15px;
+    background-color: white;
+}
+#candy-table {
+  background: none;
+  border: none;
+  margin-top: 50px;
+  width: 90%;
+  margin-left: 10%;
+}
+#candy-table img {
+  height: 40px;
+}
+#candy-table td {
+  height: 100px;
+}
+
+
+#blue {
+  background-color: #3e66dd;
+}
+#red {
+  background-color: #db4646;
+}
+#greentd {
+  background-color: #4dd62f;
+}
+#darkgreen {
+  background-color: #397c3b;
+}
+#rainbow {
+    background-image: url(../assets/images/rainbow.jpg);
+    background-size: cover;
+}
+#black {
+  background-color: #232323;
+}
+#left {
+  padding-left: 100px;
+}
+#centerplus {
+  position: absolute;
+  width: 800px;
+  z-index: 15;
+  top: 40%;
+  left: 50%;
+  margin: -100px 0 0 -320px;
+}
+#button-text {
+  font-size: 24px;
+}
+#ruleDescrip ul {
+  float: none;
+}
+.space-descrip-circle {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+
+
+/* ------------------- CASINO PAGE ------------------- */
+#casino-page {
+  background: radial-gradient(#27d868, #ce5475);
+}
+#casino-col-1 {
+  float: left;
+  width: 30%;
+}
+#casino-col-1 img {
+  margin: auto;
+  margin: 25% auto auto 50%;
+  width: 45%;
+}
+#casino-col-2 {
+  float: left;
+  width: 70%;
+}
+#negative {
+  color: #e55147;
+}
+#positive {
+  color: #80e23b;
+}
+#jackpot-display {
+  margin: auto;
+  margin-top: 3%;
+  width: 35%;
+  height: 70px;
+  background-color: white;
+  margin-bottom: 0;
+  border-radius: 15px 15px 0 0;
+  border-top: 5px solid #262626;
+  border-left: 5px solid #262626;
+  border-right: 5px solid #262626;
+  background: linear-gradient(#2b2b2b, #3d3d3d);
+}
+#jackpot-display p {
+  text-align: center;
+  font-family: 'Balls';
+  margin: 0;
+}
+#jackpot-display p:nth-child(1){
+  width: 50%;
+  float: left;
+  font-size: 65px;
+  color: #ef584a;
+}
+#jackpot-display p:nth-child(2) {
+  width: 25%;
+  float: left;
+  font-size: 65px;
+  color: white;
+}
+#jackpot-display p:nth-child(2) img {
+  margin: 0;
+  padding: 0;
+}
+#jackpot-display p:nth-child(3){
+  width: 25%;
+  float: left;
+  font-size: 65px;
+  color: white;
+}
+.slot-machine {
+  border: 7px outset;
+  width: 70%;
+  height: 600px;
+  margin: auto;
+  /*margin-top: 5%;*/
+  background-color: #4b4e4f;
+  background-image: url('../assets/images/yoshiback.png');
+  background-position: top;
+  background-size: cover;
+  box-shadow: 10px 10px 10px black;
+}
+
+
+.yahtzee img {
+  height: 90px;
+}
+
+.stats  {
+  margin: 10px auto 30px auto;
+  width: 30%;
+}
+.stats td:nth-child(1){
+  width: 40%;
+  padding: 1% 5%;
+  text-align: center;
+}
+.stats tr:nth-child(3) td:nth-child(2){
+  color: #80e23b;
+}
+.stats td {
+  font-family: 'Balls';
+  font-size: 35px;
+  color: #66e8d8;
+  background-color: #141414;
+  border: 2px inset;
+}
+.yahtzee {
+  width: 80%;
+  height: 40%;
+  margin: auto;
+}
+.yahtzee td {
+  width: 33%;
+  /*height: 150px;*/
+  border: 10px inset;
+  background: linear-gradient(gray, white, gray);
+}
+
+
+.spinbutton {
+  background: linear-gradient(#e55147, #ce4339);
+  height: 100px;
+  width: 80%;
+  margin-left: 10%;
+  border: 5px outset;
+  font-size: 24px;
+  font-family: 'Mario';
+}
+
+#reset {
+  background: linear-gradient(#eddd31, #d1c329);
+  height: 14%;
+  width: 150px;
+  float: right;
+  border: 5px outset;
+  margin-top: 15px;
+  margin-right: 15px;
+  font-family: 'Mario';
+  font-size: 13px;
+}
+
+
+.slotprizes {
+  float: left;
+  margin: 10px auto auto 10px;
+  /*border: 2px solid white;*/
+}
+
+.slotprizes td {
+  background-color: #282828;
+  font-family: 'Mario';
+  font-size: 13px;
+  color: white;
+  border: 2px inset;
+}
+.slotprizes td {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.slotprizes img {
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+th {
+  background-color: #d1d3d1;
+}
+
+
+/* ------------------- BOWSER PAGE ------------------- */
+#bowser-page {
+  background: radial-gradient(#701a1a, black);
+}
+/* --- COLUMNS --- */
+#b-left {
+  width: 40%;
+  float: left;
+  height: 1000px;
+}
+#b-left img {
+  margin: 30px auto auto 20px;
+  height: 70%;
+}
+#b-right {
+  width: 60%;
+  float: right;
+  height: 1000px;
+}
+
+/* --- TABLE --- */
+
+#bowser-box {
+  margin: auto;
+  margin-top: 10%;
+  background: linear-gradient(darkgray, black);
+  padding: 6%;
+  border: 5px outset;
+  width: 80%;
+  height: 50%;
+  box-shadow: 10px 10px 10px 10px black;
+}
+#bowser-table {
+  margin: auto;
+  height: 100%;
+}
+#bowser-button {
+  width: 100%;
+  height: 60px;
+  background-color: black;
+  color: white;
+  letter-spacing: 5px;
+  font-size: 20px;
+  font-family: 'Mario';
+  border: 3px outset;
+}
+
+
+/* --- TD --- */
+#bowser-table td{
+  min-width: 200px;
+  width: 20%;
+  height: 40%;
+  color: red;
+  border: 10px inset;
+  background: linear-gradient(gray, white, gray);
+}
+#bowser-player p{
+  font-size: 10px;
+}
+#b-coins img {
+  height: 80px;
+}
+#b-coins p {
+  font-size: 70px;
+}
+#give-take img {
+  height: 90px;
+}
+#bowser-player p {
+  font-size: 20px;
+}
+#bowser-player img {
+  height: 180px;
+}
+
+/* ------------------- WINNER PAGE ------------------- */
+#winner-page {
+  background-image: url('../assets/images/galaxy.jpg');
+  background-size: cover;
+  background-position: center;
+}
+#winner-page h1 {
+  color: white;
+  margin: 0;
+  padding: 0;
+
+}
+#winner-left {
+  float: left;
+  width: 50%;
+}
+#winner-right {
+  float: left;
+  width: 50%;
+}
+#winner-box {
+  width: 80%;
+  margin-left: 10%;
+}
+#winner-box img {
+  height: 600px;
+  margin-left: 20%;
+}
+#winner-box p {
+  text-align: center;
+  color: white;
+}
+#winner-name {
+  color: blue;
+  font-size: 50px;
+}
+#winner-amount {
+  font-size: 35px;
+
+}
+#winner-amount img {
+  height: 100px;
+}
+
+
+/* ------------------- BONUS PAGE ------------------- */
+#bonus-page {
+  background-image: url('../assets/images/castle.jpg');
+  background-size: cover;
+  background-position: center -300px;
+
+  height: 1200px;
+}
+#bonus-page h2 {
+  color: black;
+}
+#standings-all {
+  margin-top: 15%;
+  margin-left: 20%;
+  width: 80%;
+}
+#bonus-stars {
+  float: left;
+}
+.standings-box {
+  background-image: url('../assets/images/blocktexture.gif');
+  width: 100%;
+  height: 250px;
+  float: left;
+  border-left: 10px solid black;
+  border-right: 10px solid black;
+  border-top: 10px solid black;
+}
+.standings-box h2 {
+  color: white;
+  background-color: lightblue;
+  width: 90%;
+  margin: 30px auto;
+}
+.standings-each {
+  float: left;
+  width: 20%;
+}
+.standings-each img {
+  height: 400px;
+  margin-left: 10%;
+  margin-bottom: 120px;
+}
+.standings-info {
+  font-family: 'Mario';
+  color: white;
+  text-align: center;
+}
+.standings-info img {
+  height: 50px;
+  display: inline;
+}
+#standings-name {
+  font-size: 25px;
+}
+#standings-all div:nth-child(1) {
+  margin-top: -250px;
+}
+#standings-all div:nth-child(1) div{
+  height: 500px;
+}
+
+#standings-all div:nth-child(2) {
+  margin-top: -150px;
+}
+#standings-all div:nth-child(2) div{
+  height: 400px;
+}
+
+#standings-all div:nth-child(3) {
+  margin-top: -50px;
+}
+#standings-all div:nth-child(3) div{
+  height: 300px;
+}
+
+
+/* ------------------- BANK PAGE ------------------- */
+#bank-page {
+  background: linear-gradient(to bottom right, #1d42c6, white, #bc1010);
+
+}
+#bank-page h2 {
+  font-family: Impact;
+  font-size: 60px;
+  margin-top: 0;
+  margin-bottom: auto;
+}
+
+#bank-page h3 {
+  font-family: Impact;
+  margin-bottom: 0;
+  margin-top: 15%;
+  color: #282828;
+  font-size: 40px;
+  background-color: white;
+  width: 60%;
+  margin-left: 20%;
+  border-radius: 15px 15px 0 0;
+}
+.bank-col-1 {
+  width: 35%;
+  height: 1080px;
+  float: left;
+}
+.bank-col-1 img {
+  margin: auto;
+  width: 70%;
+  margin-left: 20%;
+  margin-top: 15%;
+}
+.bank-col-2 {
+  width: 65%;
+  float: left;
+}
+
+#bank-container {
+  background: linear-gradient(#414244, #57585b);
+  width: 70%;
+  height: 600px;
+  margin-left: 15%;
+  margin-top: 10%;
+  border-radius: 20px;
+  border: 10px inset;
+}
+.bankcon-col-1 {
+  width: 50%;
+  float: left;
+}
+.bankcon-col-1 img {
+  width: 40%;
+  margin-bottom: 4%;
+}
+#bank-balance {
+  width: 80%;
+  height: 230px;
+  background-color: #333333;
+  margin-left: 10%;
+  border-radius: 15px;
+  border: 5px inset;
+  font-family: 'Balls';
+  font-size: 250px;
+  text-align: center;
+  color: #567bff;
+}
+.bankcon-col-2 {
+  width: 50%;
+  float: left;
+}
+.bank-btn {
+  width: 70%;
+  height: 120px;
+  margin-top: 15%;
+  margin-left: 15%;
+  font-family: 'Mario';
+  border-radius: 15px;
+  border: 5px outset;
+  font-family: Impact;
+  font-size: 50px;
+}
+#up {
+  background: linear-gradient(#c44848, #9b3333);
+}
+#down {
+  background: linear-gradient(#5caf38, #4a912b);
+}
+
+
+/* ------------------- BOARD PAGE ------------------- */
+.board-space {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  margin: 2px;
+}
+
+.board-row {
+  /*float: left;*/
+  display: inline-block;
+}
+.board-col {
+  display: block;
+}
+
+.whole-row {
+  float: left;
+}
+.whole-col {
+  float: left;
+}
+
+.whole-col-up {
+  float: left;
+}
+
+.board-roll {
+  float: right;
+  height: 50px;
+  border-radius: 10px;
+}
+
+#playerOne {
+  border: 2px solid yellow;
+}

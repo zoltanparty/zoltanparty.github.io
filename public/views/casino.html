@@ -1,0 +1,69 @@
+<div class="content" id="casino-page">
+  <audio src="../assets/audio/casino.mp3" autoplay>
+  </audio>
+
+<div id="casino-col-1">
+  <img id="yoshi" src="../assets/images/yoshi.png"/>
+</div>
+
+<div id="casino-col-2">
+
+<!-- === NEW SLOT MACHINE === -->
+<div id="jackpot-display">
+  <p>Jackpot:</p><p ng-if="slot.jackpotArray[0].starcount">{{slot.jackpotArray[0].starcount}}<img ng-if="slot.jackpotStar" ng-src="{{slot.jackpotStar}}" height="50px"/></p>
+  <p>
+   {{slot.jackpotArray[0].amount}}<img src="../assets/images/8coin.png" height="50px"></p>
+</div>
+<div class="slot-machine">
+<button id="reset" ng-click="slot.insertCoin()">Insert coin</button>
+
+
+  <table class="slotprizes">
+    <tr>
+      <td><img src="../assets/images/star.png" height="25px"><img src="../assets/images/star.png" height="25px"><img src="../assets/images/star.png" height="25px"></td>
+      <td>Jackpot</td>
+    </tr>
+    <tr>
+      <td><img src="../assets/images/yoshiegg.png" height="25px"><img src="../assets/images/yoshiegg.png" height="25px"><img src="../assets/images/yoshiegg.png" height="25px"></td>
+      <td><img src="../assets/images/coin.png" height="25px"><img src="../assets/images/coin.png" height="25px"><img src="../assets/images/coin.png" height="25px"></td>
+    </tr>
+    <tr>
+      <td><img src="../assets/images/mushroom.png" height="25px"><img src="../assets/images/mushroom.png" height="25px"><img src="../assets/images/mushroom.png" height="25px"></td>
+      <td><img src="../assets/images/coin.png" height="25px"></td>
+    </tr>
+</table>
+
+
+<table class="stats">
+
+  <tr>
+    <td>Spins</td>
+    <td>{{slot.spins}}</td>
+  </tr>
+  <tr>
+    <td>Payout</td>
+    <td id="{{slot.payoutStatus}}">{{slot.payout}}<img src="../assets/images/8coin.png" height="30px">&nbsp;<span ng-if="slot.payoutStar" id="positive">{{slot.payoutStar}} <img ng-src="../assets/images/8star.png" height="30px" /></span></td>
+  </tr>
+  <tr>
+    <td>Result</td>
+    <td>{{slot.spinResult}}</td>
+  </tr>
+</table>
+
+<table class="yahtzee">
+  <tr>
+    <td><img ng-if="slot.resOne.image" ng-src="{{slot.resOne.image}}" /></td>
+    <td><img ng-if="slot.resTwo.image" ng-src="{{slot.resTwo.image}}" /></td>
+    <td><img ng-if="slot.resThree.image" ng-src="{{slot.resThree.image}}" /></td>
+  </tr>
+</table>
+
+<br>
+<button class="spinbutton" ng-click="slot.spinSlots()">Spin!</button>
+
+</div>
+</div> <!-- END COL 2 -->
+
+
+
+</div>

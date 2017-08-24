@@ -1,0 +1,155 @@
+<!doctype html>
+<html ng-app="routeApp">
+
+<head>
+    <title>Zoltan Party</title>
+    <meta charset="utf-8">
+
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="vendors/angular-route.min.js" charset="utf-8"></script>
+
+    <script src="scripts/app.module.js" charset="utf-8"></script>
+    <script src="scripts/app.config.js" charset="utf-8"></script>
+
+    <script src="scripts/player.service.js"></script>
+    <script src="scripts/player.controller.js"></script>
+    <script src="scripts/index.controller.js"></script>
+
+    <script src="scripts/turn.service.js"></script>
+    <script src="scripts/turn.controller.js"></script>
+
+    <script src="scripts/chance.service.js"></script>
+    <script src="scripts/candy.controller.js"></script>
+    <script src="scripts/minigame.controller.js"></script>
+    <script src="scripts/green.controller.js"></script>
+    <script src="scripts/casino.controller.js"></script>
+    <script src="scripts/bowser.controller.js"></script>
+    <script src="scripts/bonus.controller.js"></script>
+    <script src="scripts/bank.controller.js"></script>
+    <script src="scripts/board.controller.js"></script>
+
+
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.ico" />
+
+    <base href="/" />
+</head>
+
+<body>
+
+<ng-view></ng-view>
+
+<div class="static">
+
+  <div id="pages-box">
+<ul class="page-list">
+  <li id=""><a href="/home">Home</a></li>
+  <li id="rules"><a href="/rules">Rules</a></li>
+  <li id="players"><a href="/bank">Bank</a></li>
+  <li id="game"><a href="/game">Mini Game</a></li>
+  <li id="board"><a href="/board">Board</a></li>
+</ul>
+
+<ul class="page-list">
+  <li id="green"><a href="/green">Green</a></li>
+  <li id="candy"><a href="/candy">Candy</a></li>
+  <li id="casino"><a href="/casino">Casino</a></li>
+  <li id="bowser"><a href="/bowser">Bowser</a></li>
+</ul>
+  </div>
+
+
+
+  <div id="counter-box" ng-controller="IndexController as player">
+
+    <!-- ====== COUNTER TABLE ====== -->
+<table id="counter">
+  <form>
+  <tr>
+    <th></th>
+    <th id="name-fill">Name</th>
+    <th id="red-th"></th>
+    <th id="green-th"></th>
+    <th><img src="../assets/images/sword.png" /></th>
+    <th><img src="../assets/images/candy.png" /></th>
+    <th><img src="../assets/images/coin.png" /></th>
+    <th><img src="../assets/images/star.png" /></th>
+  </tr>
+  <tr>
+    <td class="grey-box" id="counter-text">P1</td>
+    <td id="counter-text">{{ player.playersArray[0].name }}</td>
+    <td><input type="number" ng-model="player.playersArray[0].red"/></td>
+    <td><input type="number" ng-model="player.playersArray[0].green"/></td>
+    <td><input type="number" ng-model="player.playersArray[0].minigame"/></td>
+    <td><input type="number" ng-model="player.playersArray[0].candy"/></td>
+    <td><input type="number" ng-model="player.playersArray[0].coins"/></td>
+    <td><input type="number" ng-model="player.playersArray[0].stars"/></td>
+  </tr>
+  <tr>
+    <td class="grey-box" id="counter-text">P2</td>
+    <td id="counter-text">{{ player.playersArray[1].name }}</td>
+    <td><input type="number" ng-model="player.playersArray[1].red"/></td>
+    <td><input type="number" ng-model="player.playersArray[1].green"/></td>
+    <td><input type="number" ng-model="player.playersArray[1].minigame"/></td>
+    <td><input type="number" ng-model="player.playersArray[1].candy"/></td>
+    <td><input type="number" ng-model="player.playersArray[1].coins"/></td>
+    <td><input type="number" ng-model="player.playersArray[1].stars"/></td>
+  </tr>
+  <tr>
+    <td class="grey-box" id="counter-text">P3</td>
+    <td id="counter-text">{{ player.playersArray[2].name }}</td>
+    <td><input type="number" ng-model="player.playersArray[2].red"/></td>
+    <td><input type="number" ng-model="player.playersArray[2].green"/></td>
+    <td><input type="number" ng-model="player.playersArray[2].minigame"/></td>
+    <td><input type="number" ng-model="player.playersArray[2].candy"/></td>
+    <td><input type="number" ng-model="player.playersArray[2].coins"/></td>
+    <td><input type="number" ng-model="player.playersArray[2].stars"/></td>
+  </tr>
+  <tr>
+    <td class="grey-box" id="counter-text">P4</td>
+    <td id="counter-text">{{ player.playersArray[3].name }}</td>
+    <td><input type="number" ng-model="player.playersArray[3].red"/></td>
+    <td><input type="number" ng-model="player.playersArray[3].green"/></td>
+    <td><input type="number" ng-model="player.playersArray[3].minigame"/></td>
+    <td><input type="number" ng-model="player.playersArray[3].candy"/></td>
+    <td><input type="number" ng-model="player.playersArray[3].coins"/></td>
+    <td><input type="number" ng-model="player.playersArray[3].stars"/></td>
+  </tr>
+</table>
+
+<!-- ====== TURN NUMBER DISPLAY ====== -->
+<div id="turn-counter" ng-controller="TurnController as turn">
+  <div id="game-turn">
+  <label for="turn-count">Turns remaining:</label><br />
+  <input type="number" ng-model="turn.turnsArray[0].turn_num" />
+</div>
+
+<button id="next-player" ng-click="player.updateCounter(player.playersArray); turn.updateTurn(turn.turnsArray)">Save</button>
+</div>
+</form>
+
+<!-- ====== CURRENT PLAYER DISPLAY ====== -->
+<div id="current-turn">
+<h5><a href="/bonus">Standings</a></h5>
+
+<table id="index-standing-table">
+  <td ng-repeat="player in player.playersArray | orderBy:['-stars', '-coins']">
+    <div id="index-standing">
+      <img src="{{player.character}}" /><br />
+      <p>{{player.name}}</p><br />
+      <p id="star-left"><img src="../assets/images/star.png" />{{player.stars}}</p>
+      <p id="coin-right"><img src="../assets/images/coin.png" />{{player.coins}}</p>
+    </div>
+  </td>
+</table>
+
+
+
+</div> <!-- end CURRENT TURN -->
+
+</div> <!-- end COUNTER BOX -->
+
+</div> <!-- end STATIC -->
+
+</body>
+</html>
